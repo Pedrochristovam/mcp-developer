@@ -15,6 +15,9 @@ export default function ParticleNetwork() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
+    
     const particles: Particle[] = [];
     const particleCount = 50;
 
@@ -26,8 +29,8 @@ export default function ParticleNetwork() {
       radius: number;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * canvasWidth;
+        this.y = Math.random() * canvasHeight;
         this.vx = (Math.random() - 0.5) * 0.5;
         this.vy = (Math.random() - 0.5) * 0.5;
         this.radius = 2;
@@ -37,8 +40,8 @@ export default function ParticleNetwork() {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        if (this.x < 0 || this.x > canvasWidth) this.vx *= -1;
+        if (this.y < 0 || this.y > canvasHeight) this.vy *= -1;
       }
 
       draw() {
