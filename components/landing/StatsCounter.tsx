@@ -32,29 +32,27 @@ export default function StatsCounter({ number, label, icon: Icon, suffix = "", d
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="relative group"
+      className="group"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-green-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-      
-      <div className="relative bg-gray-900/50 backdrop-blur-xl border border-gray-700/50 group-hover:border-emerald-500/50 rounded-3xl p-8 text-center transition-all">
+      <div className="bg-white border-2 border-gray-100 hover:border-emerald-200 rounded-3xl p-8 text-center transition-all duration-300 shadow-sm hover:shadow-lg">
         <motion.div
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/50"
+          whileHover={{ scale: 1.05 }}
+          className="w-16 h-16 mx-auto mb-4 bg-emerald-50 rounded-2xl flex items-center justify-center"
         >
-          <Icon className="w-8 h-8 text-white" />
+          <Icon className="w-8 h-8 text-emerald-600" />
         </motion.div>
         
         <motion.div 
-          className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-400 mb-2"
+          className="text-4xl md:text-5xl font-bold text-gray-900 mb-2"
         >
           {count}{suffix}
         </motion.div>
         
-        <div className="text-gray-400 font-medium">{label}</div>
+        <div className="text-gray-600 font-light">{label}</div>
       </div>
     </motion.div>
   );

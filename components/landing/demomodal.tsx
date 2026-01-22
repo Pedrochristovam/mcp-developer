@@ -32,8 +32,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
       status: "running",
       progress: 78,
       time: "2min 34s",
-      documents: 156,
-      color: "emerald"
+      documents: 156
     },
     {
       id: 2,
@@ -41,8 +40,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
       status: "completed",
       progress: 100,
       time: "Concluído",
-      documents: 340,
-      color: "green"
+      documents: 340
     },
     {
       id: 3,
@@ -50,8 +48,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
       status: "running",
       progress: 45,
       time: "5min 12s",
-      documents: 89,
-      color: "blue"
+      documents: 89
     },
     {
       id: 4,
@@ -59,8 +56,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
       status: "queued",
       progress: 0,
       time: "Na fila",
-      documents: 234,
-      color: "yellow"
+      documents: 234
     },
     {
       id: 5,
@@ -68,17 +64,16 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
       status: "running",
       progress: 92,
       time: "1min 05s",
-      documents: 523,
-      color: "purple"
+      documents: 523
     }
   ];
 
   const recentActivities = [
-    { action: "Fatura #3421 processada", time: "Há 2 min", icon: CheckCircle2, color: "text-green-400" },
-    { action: "267 e-mails enviados", time: "Há 5 min", icon: Zap, color: "text-yellow-400" },
-    { action: "Relatório mensal gerado", time: "Há 12 min", icon: FileText, color: "text-blue-400" },
-    { action: "Backup completo realizado", time: "Há 18 min", icon: CheckCircle2, color: "text-emerald-400" },
-    { action: "34 tarefas automatizadas", time: "Há 25 min", icon: Activity, color: "text-purple-400" }
+    { action: "Fatura #3421 processada", time: "Há 2 min", icon: CheckCircle2, color: "text-emerald-600" },
+    { action: "267 e-mails enviados", time: "Há 5 min", icon: Zap, color: "text-blue-600" },
+    { action: "Relatório mensal gerado", time: "Há 12 min", icon: FileText, color: "text-purple-600" },
+    { action: "Backup completo realizado", time: "Há 18 min", icon: CheckCircle2, color: "text-emerald-600" },
+    { action: "34 tarefas automatizadas", time: "Há 25 min", icon: Activity, color: "text-orange-600" }
   ];
 
   const stats = [
@@ -104,13 +99,13 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
   const getStatusColor = (status: string) => {
     switch (status) {
       case "running":
-        return "bg-blue-500/20 text-blue-400 border-blue-500/50";
+        return "bg-blue-50 text-blue-700 border-blue-200";
       case "completed":
-        return "bg-green-500/20 text-green-400 border-green-500/50";
+        return "bg-emerald-50 text-emerald-700 border-emerald-200";
       case "queued":
-        return "bg-yellow-500/20 text-yellow-400 border-yellow-500/50";
+        return "bg-amber-50 text-amber-700 border-amber-200";
       default:
-        return "bg-gray-500/20 text-gray-400 border-gray-500/50";
+        return "bg-gray-50 text-gray-700 border-gray-200";
     }
   };
 
@@ -124,31 +119,29 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
           />
 
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: "spring", duration: 0.5 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.3 }}
             className="fixed inset-4 md:inset-8 lg:inset-16 z-50 overflow-hidden"
           >
-            <div className="bg-gray-950 border-2 border-emerald-500/30 rounded-3xl shadow-2xl h-full flex flex-col overflow-hidden">
+            <div className="bg-white border-2 border-gray-200 rounded-3xl shadow-2xl h-full flex flex-col overflow-hidden">
               {/* Header */}
-              <div className="relative border-b border-gray-800 bg-gradient-to-r from-gray-900 to-gray-800 p-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-green-500/5" />
-                
-                <div className="relative flex items-center justify-between">
+              <div className="border-b border-gray-200 bg-gradient-to-br from-gray-50 to-white p-6">
+                <div className="flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-500 rounded-xl flex items-center justify-center">
+                      <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center">
                         <Zap className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h2 className="text-2xl font-black text-white">Sistema de Automação Empresarial</h2>
-                        <p className="text-sm text-gray-400">Plataforma completa para automatizar processos</p>
+                        <h2 className="text-2xl font-bold text-gray-900">Sistema de Automação Empresarial</h2>
+                        <p className="text-sm text-gray-600 font-light">Plataforma completa para automatizar processos</p>
                       </div>
                     </div>
                   </div>
@@ -157,7 +150,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                     variant="ghost"
                     size="icon"
                     onClick={onClose}
-                    className="text-gray-400 hover:text-white hover:bg-gray-800 rounded-xl"
+                    className="text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl"
                   >
                     <X className="w-6 h-6" />
                   </Button>
@@ -165,7 +158,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
               </div>
 
               {/* Content */}
-              <div className="flex-1 overflow-y-auto p-6 bg-gray-950">
+              <div className="flex-1 overflow-y-auto p-6 bg-gray-50">
                 <div className="max-w-7xl mx-auto space-y-6">
                   {/* Stats Grid */}
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -174,19 +167,19 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                         key={stat.label}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
+                        transition={{ delay: index * 0.1, duration: 0.3 }}
                       >
-                        <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50 hover:border-emerald-500/50 transition-all">
+                        <Card className="bg-white border-2 border-gray-100 hover:border-emerald-200 transition-all duration-300 shadow-sm">
                           <CardContent className="p-4">
                             <div className="flex items-center justify-between mb-2">
-                              <stat.icon className="w-5 h-5 text-emerald-400" />
-                              <div className={`flex items-center gap-1 text-xs ${stat.trend === 'up' ? 'text-green-400' : 'text-red-400'}`}>
+                              <stat.icon className="w-5 h-5 text-emerald-600" />
+                              <div className={`flex items-center gap-1 text-xs font-medium ${stat.trend === 'up' ? 'text-emerald-600' : 'text-red-600'}`}>
                                 {stat.trend === 'up' ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
                                 {stat.change}
                               </div>
                             </div>
-                            <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                            <div className="text-xs text-gray-400">{stat.label}</div>
+                            <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
+                            <div className="text-xs text-gray-600 font-light">{stat.label}</div>
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -197,11 +190,11 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                     {/* Processos Ativos */}
                     <div className="lg:col-span-2 space-y-4">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                          <Activity className="w-5 h-5 text-emerald-400" />
+                        <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                          <Activity className="w-5 h-5 text-emerald-600" />
                           Processos em Execução
                         </h3>
-                        <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">
+                        <Badge className="bg-emerald-50 text-emerald-700 border-2 border-emerald-200 rounded-full">
                           {activeProcesses} Ativos
                         </Badge>
                       </div>
@@ -212,18 +205,18 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                             key={process.id}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: index * 0.1, duration: 0.3 }}
                           >
-                            <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50 hover:border-emerald-500/30 transition-all overflow-hidden group">
+                            <Card className="bg-white border-2 border-gray-100 hover:border-emerald-200 transition-all duration-300 shadow-sm hover:shadow-lg">
                               <CardContent className="p-4">
                                 <div className="flex items-center justify-between mb-3">
                                   <div className="flex items-center gap-3 flex-1">
-                                    <div className={`w-10 h-10 rounded-xl bg-${process.color}-500/20 flex items-center justify-center border border-${process.color}-500/30`}>
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center border border-emerald-200">
                                       {getStatusIcon(process.status)}
                                     </div>
                                     <div className="flex-1">
-                                      <div className="font-semibold text-white text-sm">{process.name}</div>
-                                      <div className="flex items-center gap-3 text-xs text-gray-400 mt-1">
+                                      <div className="font-semibold text-gray-900 text-sm">{process.name}</div>
+                                      <div className="flex items-center gap-3 text-xs text-gray-600 font-light mt-1">
                                         <span className="flex items-center gap-1">
                                           <FileText className="w-3 h-3" />
                                           {process.documents} docs
@@ -235,7 +228,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                                       </div>
                                     </div>
                                   </div>
-                                  <Badge className={`${getStatusColor(process.status)} border text-xs`}>
+                                  <Badge className={`${getStatusColor(process.status)} border-2 text-xs rounded-full`}>
                                     {process.status === 'running' ? 'Em Execução' :
                                      process.status === 'completed' ? 'Concluído' :
                                      process.status === 'queued' ? 'Na Fila' : 'Pausado'}
@@ -243,19 +236,12 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                                 </div>
 
                                 <div className="space-y-2">
-                                  <div className="flex justify-between text-xs text-gray-400">
+                                  <div className="flex justify-between text-xs text-gray-600">
                                     <span>Progresso</span>
-                                    <span className="font-semibold text-emerald-400">{process.progress}%</span>
+                                    <span className="font-semibold text-emerald-600">{process.progress}%</span>
                                   </div>
                                   <div className="relative">
-                                    <Progress value={process.progress} className="h-2 bg-gray-700" />
-                                    {process.status === 'running' && (
-                                      <motion.div
-                                        className="absolute top-0 left-0 h-2 w-20 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                                        animate={{ x: [-80, 400] }}
-                                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                                      />
-                                    )}
+                                    <Progress value={process.progress} className="h-2 bg-gray-200" />
                                   </div>
                                 </div>
                               </CardContent>
@@ -268,13 +254,13 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                     {/* Atividades Recentes */}
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                          <BarChart3 className="w-5 h-5 text-emerald-400" />
+                        <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                          <BarChart3 className="w-5 h-5 text-emerald-600" />
                           Atividade Recente
                         </h3>
                       </div>
 
-                      <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50">
+                      <Card className="bg-white border-2 border-gray-100 shadow-sm">
                         <CardContent className="p-4">
                           <div className="space-y-4">
                             {recentActivities.map((activity, index) => (
@@ -282,15 +268,15 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                                 key={index}
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="flex items-start gap-3 pb-4 border-b border-gray-700/50 last:border-0 last:pb-0"
+                                transition={{ delay: index * 0.1, duration: 0.3 }}
+                                className="flex items-start gap-3 pb-4 border-b border-gray-100 last:border-0 last:pb-0"
                               >
-                                <div className={`w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center ${activity.color}`}>
+                                <div className={`w-8 h-8 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center ${activity.color}`}>
                                   <activity.icon className="w-4 h-4" />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <p className="text-sm text-white font-medium truncate">{activity.action}</p>
-                                  <p className="text-xs text-gray-400 mt-1">{activity.time}</p>
+                                  <p className="text-sm text-gray-900 font-medium truncate">{activity.action}</p>
+                                  <p className="text-xs text-gray-600 font-light mt-1">{activity.time}</p>
                                 </div>
                               </motion.div>
                             ))}
@@ -299,18 +285,18 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                       </Card>
 
                       {/* Quick Stats */}
-                      <Card className="bg-gradient-to-br from-emerald-900/20 to-green-900/20 border-emerald-500/30">
+                      <Card className="bg-gradient-to-br from-emerald-50 to-green-50 border-2 border-emerald-200 shadow-sm">
                         <CardContent className="p-4">
                           <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 bg-emerald-500/20 rounded-xl flex items-center justify-center">
-                              <TrendingUp className="w-5 h-5 text-emerald-400" />
+                            <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center">
+                              <TrendingUp className="w-5 h-5 text-white" />
                             </div>
                             <div>
-                              <div className="text-sm text-gray-400">Desempenho Hoje</div>
-                              <div className="text-2xl font-bold text-white">{completedToday} tarefas</div>
+                              <div className="text-sm text-gray-600 font-light">Desempenho Hoje</div>
+                              <div className="text-2xl font-bold text-gray-900">{completedToday} tarefas</div>
                             </div>
                           </div>
-                          <div className="flex items-center justify-between text-xs text-emerald-400">
+                          <div className="flex items-center justify-between text-xs text-emerald-700 font-medium">
                             <span>+23% vs. ontem</span>
                             <ArrowUpRight className="w-4 h-4" />
                           </div>
@@ -323,18 +309,18 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="bg-gradient-to-r from-emerald-600 to-green-600 rounded-2xl p-6 text-center"
+                    transition={{ delay: 0.5, duration: 0.3 }}
+                    className="bg-emerald-600 rounded-3xl p-8 text-center"
                   >
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">
                       Impressionado com as possibilidades?
                     </h3>
-                    <p className="text-emerald-50 mb-4">
+                    <p className="text-emerald-50 font-light mb-6">
                       Este é apenas um exemplo do que podemos criar para automatizar seus processos empresariais.
                     </p>
                     <Button 
                       size="lg"
-                      className="bg-white text-emerald-600 hover:bg-gray-100 font-bold"
+                      className="bg-white text-emerald-600 hover:bg-gray-100 font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                       onClick={() => {
                         window.open('https://wa.me/5531991776441?text=Olá! Vi a demonstração do sistema e gostaria de um sistema assim!', '_blank');
                         onClose();
