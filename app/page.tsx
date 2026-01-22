@@ -1,9 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-
-// Force dynamic rendering to avoid SSG issues with window object
-export const dynamic = 'force-dynamic';
 import { motion, useScroll, useSpring } from "framer-motion";
 import { 
   Monitor,
