@@ -88,7 +88,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
     { label: "Documentos Processados", value: "1.2K", change: "+45", trend: "up", icon: FileText }
   ];
 
-  const getStatusIcon = (status) => {
+  const getStatusIcon = (status: string) => {
     switch (status) {
       case "running":
         return <motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }}><Activity className="w-4 h-4" /></motion.div>;
@@ -101,7 +101,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
     }
   };
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case "running":
         return "bg-blue-500/20 text-blue-400 border-blue-500/50";
