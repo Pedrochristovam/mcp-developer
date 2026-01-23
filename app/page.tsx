@@ -25,6 +25,7 @@ import {
   Code2,
   Award,
   Rocket,
+  Globe,
   Star
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
